@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 // Combination Sum in array (QUESTION LINK - https://practice.geeksforgeeks.org/problems/combination-sum-1587115620/1 )
-
+//TIME COMPLEXCITY = 2(N^K)
+//Space Complexcity = k*x
 //USING RECURSION 
 
 public class combination_sum {
