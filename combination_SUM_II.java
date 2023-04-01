@@ -1,6 +1,14 @@
 
 import java.util.*;
 
+// COMBINATION SUM 2   *** VVIP USING RECURSION --- QUESTION LINK (LEETCODE - https://leetcode.com/problems/combination-sum-ii/description/) 
+//(GFG QUESTION LINK - https://practice.geeksforgeeks.org/problems/combination-sum-ii-1664263832/1?page=1&sortBy=newest&query=page1sortBynewest)
+
+ //time complexcity =  O(K * 2N)
+ //space compplexcity =  O(N)
+
+//contain only unique and sorted subseqence sum ****
+
 
 public class combination_SUM_II {
 
