@@ -4,6 +4,9 @@ import java.util.*;
 
 //POWER SET SIMILAR QUESTION ---------*****
 
+//total sub-seq - (2^N)
+
+
 //VERY IMPORTANT 
 public class String_Sub_Seq_Recursion {
 
