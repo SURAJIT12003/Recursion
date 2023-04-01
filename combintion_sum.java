@@ -21,12 +21,12 @@ public class combination_sum {
         }
         if(arr[i]<=target){
             as.add(arr[i]);
-            target= target-arr[i];
-            combination(i, target, ans, arr, n, as); 
+           
+            combination(i, target-arr[i], ans, arr, n, as); 
             as.remove(as.size()-1);
         }  
-        i=i+1;
-        combination(i, target, ans, arr, n, as); 
+       
+        combination(i+1, target, ans, arr, n, as); 
        
         
     }
