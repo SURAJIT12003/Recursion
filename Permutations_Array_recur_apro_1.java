@@ -1,7 +1,7 @@
  
  import java.util.*;
 
-  // Permutations of Array or String USING RECURSION (** * VVIP **) (APPROACH -1 ** QUESTION LINK --)
+  // Permutations of Array or String USING RECURSION (** * VVIP **) (APPROACH -1 ** QUESTION LINK -- https://leetcode.com/problems/permutations/)
 
   //TIME COMPLEXCITY - 0(N!*N)
 
