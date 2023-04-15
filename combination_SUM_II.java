@@ -12,41 +12,41 @@ import java.util.*;
 
 public class combination_SUM_II {
 
-   public static void combi_sum_II(int i,int target,int arr[],ArrayList<Integer> as,int n ,ArrayList<ArrayList<Integer>> ans ){
-            if(target==0){
-                ArrayList<Integer> a = new ArrayList<>();
-                a.addAll(as);
-                ans.add(a);
-                return ;
-            }
+    public static void findCombinations(int ind, int[] arr, int target, List < List < Integer >> ans, List < Integer > ds) {
+        if (target == 0) {
+            ans.add(new ArrayList < > (ds));
+            return;
+        }
 
-            for(int in=i;in<=n;in++){
-               
-                if(in>i && arr[in]==arr[in-1]){
-                    continue;
-                }
-                if(arr[i]>target){
-                    break;
-                }
-                as.add(arr[in]);
-                combi_sum_II(i+1, target-arr[in], arr, as, n,ans);
-                as.remove(as.size()-1);
-
+        for (int i = ind; i < arr.length; i++) {
+            if (i > ind && arr[i] == arr[i - 1]){
+                continue;
             }
+             
+            if (arr[i] > target){
+                break;
+            } 
+
+            ds.add(arr[i]);
+            findCombinations(i + 1, arr, target - arr[i], ans, ds);
+            ds.remove(ds.size() - 1);
+        }
     }
     public static void main(String[] args) {
-        int arr[]=new int [5];
-        arr[0]=1;
+        int arr[]=new int [7];
+        arr[0]=10;
         arr[1]=1;
-        arr[2]=1;
-        arr[3]=2;
-        arr[4]=2;
+        arr[2]=2;
+        arr[3]=7;
+        arr[4]=6;
+        arr[5]=1;
+        arr[6]=5;
         int n = arr.length;
-        int k = 4;
+        int k = 8;
         Arrays.sort(arr);
-        ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
-        ArrayList<Integer> a = new ArrayList<>();
-        combi_sum_II(0, k, arr, a, n-1,ans);
+        List<List<Integer>> ans = new ArrayList<>();
+        List<Integer> a = new ArrayList<>();
+        findCombinations(0, arr, k, ans, a);
         System.out.println(ans);
     }
 }
