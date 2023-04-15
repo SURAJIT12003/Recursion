@@ -14,7 +14,9 @@ public class combination_SUM_II {
 
     public static void findCombinations(int ind, int[] arr, int target, List < List < Integer >> ans, List < Integer > ds) {
         if (target == 0) {
-            ans.add(new ArrayList < > (ds));
+           List<Integer> a = new ArrayList<>();
+            a.addAll(ds);
+            ans.add(a);
             return;
         }
 
