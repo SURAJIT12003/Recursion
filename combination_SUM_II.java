@@ -12,7 +12,7 @@ import java.util.*;
 
 public class combination_SUM_II {
 
-    public static void combi_sum_II(int i,int target,int arr[],ArrayList<Integer> as,int n ,ArrayList<ArrayList<Integer>> ans ){
+   public static void combi_sum_II(int i,int target,int arr[],ArrayList<Integer> as,int n ,ArrayList<ArrayList<Integer>> ans ){
             if(target==0){
                 ArrayList<Integer> a = new ArrayList<>();
                 a.addAll(as);
@@ -41,14 +41,12 @@ public class combination_SUM_II {
         arr[2]=1;
         arr[3]=2;
         arr[4]=2;
-     
         int n = arr.length;
-     
-        int target = 4;
-     
+        int k = 4;
         Arrays.sort(arr);
-     
+        ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
         ArrayList<Integer> a = new ArrayList<>();
-        combi_sum_II(0, target, arr, a, n-1);
+        combi_sum_II(0, k, arr, a, n-1,ans);
+        System.out.println(ans);
     }
 }
