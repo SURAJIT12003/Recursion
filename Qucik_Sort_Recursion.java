@@ -14,28 +14,29 @@ public class Qucik_Sort_Recursion {
             quick(arr, partion+1, high);
     }
 
-    public static int sort(int pivot,int arr[],int low ,int high){
-            int i=low;
-            int j =high;
-            while(j>i){
+    public static int sort(int pivot,int arr[],int start ,int end){
+        int i=start;
+        int j=end;
+        int pivot = arr[start];
+        while(i<j){
 
-                while(i<=high && arr[i]<pivot ){
-                    i++;
-                }
+           while( i<=end && arr[i]<=arr[start] ){
+              i++;
+           }
+           while(j>=start && arr[j]>arr[start]){
+              j--;
+           }
+           if(i<j){
+              int t = arr[i];
+              arr[i]=arr[j];
+              arr[j]=t;
+           }
 
-                while(j>=low && pivot<arr[j]){
-                    j--;
-                }
-
-                if(j>i){
-                    int t = arr[i];
-                    int r = arr[j];
-                    arr[i]=r;
-                    arr[j]=t;
-                }
-                
-            }
-            return j;
+        }
+        int t = arr[start];
+        arr[start]=arr[j];
+        arr[j]=t;
+        return j;
     }
     public static void main(String[] args) {
 
