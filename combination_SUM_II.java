@@ -34,6 +34,41 @@ public class combination_SUM_II {
             ds.remove(ds.size() - 1);
         }
     }
+
+
+   // SAME AS COMBINATION HERE [i] increase every time ******
+    static  List<List<Integer>> ans = new ArrayList<>();
+
+    public void recur(int i,int n,int target,int arr[],List<Integer> s){
+        if(target==0){
+            List<Integer> l = new ArrayList<>();
+            l.addAll(s);
+           // Collections.sort(l);
+            if(ans.contains(l)==false){
+                ans.add(l);
+            }
+            return;
+        }
+
+        if(i>=n){
+            return ;
+        }
+
+        if(arr[i]<=target){
+            s.add(arr[i]);
+            recur(i+1,n,target-arr[i],arr,s);  // When take condition then i++ .
+            s.remove(s.size()-1);
+        }
+
+        recur(i+1,n,target,arr,s);
+
+    }
+    public List<List<Integer>> combinationSum2(int[] arr, int target) {
+        Arrays.sort(arr);
+        List<Integer> l = new ArrayList<>();
+        recur(0,arr.length,target,arr,l);
+        return ans;
+    }
     public static void main(String[] args) {
         int arr[]=new int [7];
         arr[0]=10;
